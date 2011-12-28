@@ -1,7 +1,4 @@
-bin
-build
-include
-lib
+fizz-env
 .Python
 *.pyc
 .idea

@@ -1,4 +1,5 @@
-fizz-env
+venv
+static
 .Python
 *.pyc
 .idea

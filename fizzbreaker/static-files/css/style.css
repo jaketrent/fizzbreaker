@@ -5,3 +5,33 @@ html, body {
 section, article, header, aside, footer {
   display: block;
 }
+
+body {
+  background: #e5e1d1 url(../img/burst.png) no-repeat center top;
+}
+#title {
+  width: 168px;
+  height: 171px;
+  background: url(../img/title.png) no-repeat center;
+}
+.bubbles {
+  width: 255px;
+  height: 347px;
+  background: url(../img/bubbles.png) no-repeat center;
+}
+.and {
+  width: 56px;
+  height: 56px;
+  background: url(../img/and.png) no-repeat center;
+  display: inline-block;
+}
+.circ-lrg {
+  width: 96px;
+  height: 96px;
+  background: url(../img/circ-lrg.png) no-repeat center;
+}
+.circ-sm {
+  width: 40px;
+  height: 40px;
+  background: url(../img/circ-sm.png) no-repeat center;
+}

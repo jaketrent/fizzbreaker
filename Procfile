@@ -1,1 +1,1 @@
-web: python fizzbreaker/manage.py run_gunicorn -b "0.0.0.0:$PORT" -w 3
+web: python fizzbreaker/manage.py collectstatic --noinput; bin/gunicorn_django --workers=3 --bind=0.0.0.0:$PORT fizzbreaker/settings.py

@@ -1,7 +1,9 @@
-venv
 static
 .Python
 *.pyc
 .idea
 *.ipr
 *.iml
+bin
+lib
+include

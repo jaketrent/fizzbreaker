@@ -1,0 +1,7 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+section, article, header, aside, footer {
+  display: block;
+}

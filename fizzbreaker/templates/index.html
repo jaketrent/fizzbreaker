@@ -3,19 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <title>FizzBreaker</title>
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-    img {
-      display: block;
-      margin: 0 auto;
-      margin-top: 150px;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/style.css" media="all">
 </head>
 <body>
-  <img src="{{ STATIC_URL }}img/fizzLogo.png" />
+  <div class="container">
+    <section id="side">
+      <header>
+        <h1 id="title">
+          <img src="{{ STATIC_URL }}/img/title.png" alt="FizzBreaker" />
+        </h1>
+      </header>
+    </section>
+    <section id="content">
+      <section id="top">
+        <h2>
+          Web  Design
+          <span class="and">&amp;</span>
+          Developmemnt
+        </h2>
+      </section>
+      <section id="main">
+        <article class="border">
+          <header>
+            <h2>Create Your Website</h2>
+            <p>
+              A happy site needs a unique, custom design. We will work with you to design a balanced layout, pleasing
+              color scheme, and matching typography. Then we'll code your website so it'll be ready to run on the
+              Internet.
+            </p>
+            <aside>
+              <ul>
+                <li>
+                  <header>
+                    <h3>1st Page</h3>
+                  </header>
+                  <div class="circ-lrg">
+                    <span class="usd">$</span>
+                    100
+                  </div>
+                </li>
+                <li>
+                  <header>
+                    <h3>Additional Pages</h3>
+                  </header>
+                  <div class="circ-lrg">
+                    <span class="usd">$</span>
+                    25
+                  </div>
+                  <div class="circ-sm">
+                    /ea.
+                  </div>
+                </li>
+              </ul>
+            </aside>
+          </header>
+        </article>
+        <article class="border">
+          <header>
+            <h2>Host Your Website</h2>
+            <p>
+              A happy site also needs a home on the Internet. To keep your site up and available to your site visitors,
+              it needs an address and a place to live. Hosting takes care of this. We'll give you your new site to host
+              yourself or we can take care of it for you.
+            </p>
+            <aside>
+              <ul>
+                <li>
+                  <header>
+                    <h3>Per Site</h3>
+                  </header>
+                  <div class="circ-lrg">
+                    <span class="usd">$</span>
+                    10
+                  </div>
+                  <div class="circ-sm">
+                    /mo.
+                  </div>
+                </li>
+                <li>
+                  <div class="circ-lrg">
+                    <span class="usd">$</span>
+                    100
+                  </div>
+                  <div class="circ-sm">
+                    /yr.
+                  </div>
+                </li>
+              </ul>
+            </aside>
+          </header>
+        </article>
+        <article class="half">
+          <header>
+            <h2>Service to Suit You</h2>
+          </header>
+          <p>
+            We are in the business of making websites that are easy to use, are pleasing to the eye, and that make the
+            Internet a happier place. We are flexible beyond the stated services. We want to get you on the web and
+            make you and your customers happy there.
+          </p>
+        </article>
+        <article class="half">
+          <header>
+            <h2>Referral Bonus</h2>
+          </header>
+          <p>
+            We are a new and growing business. As such, our referral bonus is generous and simple: If you refer a new
+            customer, you will receive 10% of the cost of the first completed job.
+          </p>
+        </article>
+      </section>
+      <footer id="footer">
+        <ul>
+          <li>&copy; 2011 FizzBreaker Web Design and Development</li>
+          <li><a href="mailto:fizzbreaker@gmail.com">fizzbreaker@gmail.com</a></li>
+          <li>Salt Lake City, Utah</li>
+          <li><a href="tel:1-801-293-4993">(801) 293-4993</a></li>
+          <li><a href="http://twitter.com/fizzbreaker">@fizzbreaker</a></li>
+        </ul>
+      </footer>
+    </section>
+  </div>
 </body>
 </html>

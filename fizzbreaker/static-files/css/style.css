@@ -1,37 +1,185 @@
+@font-face {
+    font-family: 'TallDark';
+    src: url('../type/talldark-webfont.eot');
+    src: url('../type/talldark-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../type/talldark-webfont.woff') format('woff'),
+         url('../type/talldark-webfont.ttf') format('truetype'),
+         url('../type/talldark-webfont.svg#TallDarkAndHandsomeCondensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  font-family: Arial, san-serif;
+  color: #6c6c6c;
 }
 section, article, header, aside, footer {
   display: block;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  font-family: 'TallDark', Arial, san-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 body {
   background: #e5e1d1 url(../img/burst.png) no-repeat center top;
 }
-#title {
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
+#side {
+  width: 290px;
+  background: #333075;
+  float: left;
+  color: #fff;
+  position: relative;
+  height: 1200px;
+}
+.top {
+  margin-top: 125px;
+}
+#title h1 {
   width: 168px;
   height: 171px;
   background: url(../img/title.png) no-repeat center;
+  margin: 0 auto;
 }
 .bubbles {
   width: 255px;
   height: 347px;
   background: url(../img/bubbles.png) no-repeat center;
+  position: absolute;
+  top: 325px;
+  left: -125px;
+}
+
+#content {
+  width: 700px;
+  margin-left: 34px;
+  float: left;
+}
+#top h2 {
+  padding-top: 9px;
+  position: relative;
+  text-align: right;
+  letter-spacing: 5px;
+}
+
+.before-and {
+  padding-right: 30px;
 }
 .and {
   width: 56px;
   height: 56px;
   background: url(../img/and.png) no-repeat center;
   display: inline-block;
+  overflow: hidden;
+  text-indent: 999em;
+  position: absolute;
+  right: 117px;
+  top: -10px;
+}
+
+
+#main {
+  margin-top: 200px;
+  overflow: auto;
+}
+.border {
+  border: 3px solid #5f5ca6;
+  padding: 0 17px;
+  margin-bottom: 15px;
+}
+.offer {
+  clear: both;
+  overflow: auto;
+}
+.offer h2 {
+  font-size: 36px;
+  margin-bottom: 0;
+}
+.offer p {
+  float: left;
+  width: 310px;
+  margin-right: 20px;
+}
+.offer .prices {
+  overflow: auto;
+  float: right;
+  width: 330px;
+  height: 170px;
+  display: block;
+}
+.prices li {
+  float: left;
+  width: 157px;
+  position: relative;
+}
+.prices li .unit {
+  position: absolute;
+  right: 51px;
+  bottom: -16px;
+}
+.prices h3 {
+  margin: 2px 0 0 0;
+  padding: 0;
+}
+.circ {
+  color: #fff;
+  text-align: center;
+  font-family: 'TallDark', Arial, san-serif;
 }
 .circ-lrg {
   width: 96px;
   height: 96px;
   background: url(../img/circ-lrg.png) no-repeat center;
+  line-height: 107px;
+  font-size: 50px;
+}
+
+.circ-lrg .usd {
+  font-size: 24px;
+  margin-right: 3px;
 }
 .circ-sm {
   width: 40px;
   height: 40px;
   background: url(../img/circ-sm.png) no-repeat center;
+  line-height: 45px;
+  font-size: 10px;
 }
+
+.half {
+  width: 335px;
+  margin-right: 15px;
+  float: left;
+}
+.blurb h2 {
+  font-size: 30px;
+}
+
+#footer {
+  clear: both;
+  margin-top: 80px;
+  text-align: right;
+  font-size: 12px;
+}
+#footer ul {
+  float: right;
+  margin-bottom: 8px;
+}
+#footer ul li {
+  float: left;
+  margin-left: 5px;
+}
+

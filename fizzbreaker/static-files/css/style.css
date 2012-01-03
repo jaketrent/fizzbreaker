@@ -20,6 +20,8 @@ section, article, header, aside, footer {
 }
 h1, h2, h3, h4, h5, h6 {
   color: #000;
+  padding: 0;
+  margin: 0;
   font-family: 'TallDark', Arial, san-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -68,28 +70,12 @@ body {
   margin-left: 34px;
   float: left;
 }
-#top h2 {
-  padding-top: 9px;
-  position: relative;
-  text-align: right;
-  letter-spacing: 5px;
+#top {
+  overflow: auto;
 }
-
-.before-and {
-  padding-right: 30px;
+#top h2 img {
+  float: right;
 }
-.and {
-  width: 56px;
-  height: 56px;
-  background: url(../img/and.png) no-repeat center;
-  display: inline-block;
-  overflow: hidden;
-  text-indent: 999em;
-  position: absolute;
-  right: 117px;
-  top: -10px;
-}
-
 
 #main {
   margin-top: 200px;
@@ -106,7 +92,7 @@ body {
 }
 .offer h2 {
   font-size: 36px;
-  margin-bottom: 0;
+  margin: 25px 0 0 0;
 }
 .offer p {
   float: left;
@@ -167,6 +153,7 @@ body {
 }
 .blurb h2 {
   font-size: 30px;
+  margin: 20px 0 10px 0;
 }
 
 #footer {

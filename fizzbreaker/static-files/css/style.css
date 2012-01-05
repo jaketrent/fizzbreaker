@@ -201,6 +201,7 @@ body {
     display: block;
     z-index: 3;
     position: relative;
+    max-width: 100%;
   }
   .bubbles {
     top: 70px;

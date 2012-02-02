@@ -73,10 +73,13 @@ body {
   float: left;
 }
 #top {
-  overflow: auto;
+  position: relative;
+  height: 30px;
 }
 #top h2 img {
-  float: right;
+  position: absolute;
+  right: -20px;
+  top: -13px;
 }
 
 #main {
@@ -173,7 +176,16 @@ body {
   margin-left: 5px;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 768px) {
+  .offer p  {
+    width: 96.9879518%;
+  }
+  .offer .prices {
+    width: 96.9879518%;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .container {
     width: 100%;
   }
@@ -195,12 +207,13 @@ body {
     position: relative;
   }
   #top h2 img {
-    float: none;
     margin: 0 auto;
     margin-top: 40px;
     display: block;
     z-index: 3;
     position: relative;
+    right: auto;
+    top: -20px;
     max-width: 100%;
   }
   .bubbles {
@@ -208,12 +221,6 @@ body {
   }
   #main {
     margin-top: 50px;
-  }
-  .offer p  {
-    width: 96.9879518%;
-  }
-  .offer .prices {
-    width: 96.9879518%;
   }
   .half {
     float: none;

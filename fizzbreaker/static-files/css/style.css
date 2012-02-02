@@ -114,12 +114,11 @@ body {
 .prices li {
   float: left;
   width: 47.5757576%; /*157/330*/
-  position: relative;
 }
 .prices li .unit {
   position: absolute;
-  right: 34.454546%; /*(51/330) + 19*/
-  bottom: -16px;
+  bottom: -15px;
+  right: -8px;
   font-size: 20px;
 }
 .prices h3 {
@@ -137,6 +136,7 @@ body {
   background: url(../img/circ-lrg.png) no-repeat center;
   line-height: 107px;
   font-size: 50px;
+  position: relative;
 }
 
 .circ-lrg .usd {

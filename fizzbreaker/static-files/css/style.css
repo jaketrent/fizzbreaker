@@ -88,6 +88,7 @@ body {
   position: absolute;
   top: 0;
   right: -35px;
+  z-index: 1;
 }
 #hero .contact {
   margin: 20px 0 0 30px;
@@ -113,49 +114,22 @@ body {
   color: #8f8dc5;
   text-decoration: none;
 }
-#title h1 {
-  width: 168px;
-  height: 171px;
-  background: url(../img/title.png) no-repeat center;
-  margin: 0 auto;
-}
-.bubbles {
-  width: 255px;
-  height: 347px;
-  background: url(../img/bubbles.png) no-repeat center;
-  position: absolute;
-  top: 325px;
-  left: -125px;
-  z-index: 1;
-}
-
-#content {
-  width: 68.359375%; /*700/1024*/
-  margin-left: 3.3203125%; /*34/1024*/
-  float: left;
-}
-#top {
-  position: relative;
-  height: 30px;
-}
-#top h2 img {
-  position: absolute;
-  right: -20px;
-  top: -13px;
-}
-
-#main {
-  margin-top: 200px;
-  overflow: auto;
+#pricing {
+  margin-top: 50px;
+  width: 75%;
 }
 .border {
   border: 3px solid #5f5ca6;  /*3/700=0.004285714*/
   padding: 0 2.560241%; /*17/664*/
   margin-bottom: 15px;
+  border-radius: 25px;
 }
 .offer {
   clear: both;
   overflow: auto;
+  background: #fff;
+  position: relative;
+  z-index: 2;
 }
 .offer h2 {
   font-size: 36px;
@@ -200,7 +174,6 @@ body {
   font-size: 50px;
   position: relative;
 }
-
 .circ-lrg .usd {
   font-size: 24px;
   margin-right: 3px;
@@ -212,25 +185,30 @@ body {
   line-height: 45px;
   font-size: 10px;
 }
-
+#blurbs {
+  width: 75%;
+  margin: 30px 0 0 30px;
+  overflow: auto;
+}
 .half {
   width: 47.8571429%; /*335/700*/
   margin-right: 2.1428571%; /*15/700*/
   float: left;
-}
+} 
 .blurb h2 {
-  font-size: 30px;
+  font-size: 40px;
+  color: #2e2c6d;
+  font-weight: normal;
   margin: 20px 0 10px 0;
 }
 
 #footer {
   clear: both;
-  margin-top: 80px;
+  margin-top: 40px;
   text-align: right;
   font-size: 12px;
 }
 #footer ul {
-  float: right;
   margin-bottom: 8px;
 }
 #footer ul li {

@@ -228,7 +228,18 @@ body {
   line-height: 25px;
 }
 
+@media screen and (max-width: 926px) {
+  #hero h1 {
+    width: 49.0234375%; /*502/1024*/
+  }
+  #hero .byline {
+    width: 62%; /*431/1024 + big tweak*/
+  }
+}
 @media screen and (max-width: 768px) {
+  #hero #contact .email {
+    font-size: 22px;
+  }
   .offer p  {
     width: 96.9879518%;
   }
@@ -246,6 +257,19 @@ body {
   }
   #navbar {
     display: none;
+  }
+  #hero h1 {
+    position: relative;
+    margin-left: -20px;
+    width: 90%;
+  }
+  #hero .byline {
+    width: 100%;
+    padding-top: 10px;
+    margin-left: -10px;
+  }
+  #blurbs {
+    margin-top: 0;
   }
   .half {
     float: none;

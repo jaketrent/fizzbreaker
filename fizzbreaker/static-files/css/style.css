@@ -33,23 +33,85 @@ ul, ol {
 }
 
 body {
-  background: #e5e1d1 url(../img/burst.png) no-repeat center top;
+  background: #ecebd1 url(../img/bg-repeat.png);
 }
 .container {
   max-width: 1024px;
   width: 90%;
   margin: 0 auto;
 }
-#side {
-  width: 28.3203125%; /*290/1024*/
-  background: #333075;
-  float: left;
+#navbar {
+  border-radius: 0 0 25px 25px;
+  background: #5c5b71;
+  box-shadow: 3px 2px 2px #000;
+  padding: 20px 30px;
   color: #fff;
-  position: relative;
-  height: 1200px;
+  overflow: auto;
 }
-.top {
-  margin-top: 125px;
+#navbar header {
+  float: left;
+}
+#navbar header h2 {
+  font-family: Arial, san-serif;
+  letter-spacing: normal;
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal;
+}
+#navbar nav {
+  float: right;
+}
+#navbar nav ul {
+  overflow: auto;
+}
+#navbar nav ul li {
+  float: right;
+}
+#navbar nav ul li:after {
+  content: "|";
+}
+#navbar nav ul li:first-child:after {
+  content: "";
+}
+#navbar nav ul li a {
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+#hero {
+  position: relative;
+}
+#hero .byline {
+  padding-top: 100px;
+}
+#hero h1 {
+  position: absolute;
+  top: 0;
+  right: -35px;
+}
+#hero .contact {
+  margin: 20px 0 0 30px;
+  text-transform: uppercase;
+  color: #2e2c6d;
+}
+#hero .contact a {
+  color: #2e2c6d;
+  text-decoration: none;
+}
+#hero .contact .me {
+  font-size: 25px;
+  color: #2e2c6d;
+}
+#hero .contact .me:after {
+  content: " >>";
+}
+#hero .contact .name  {
+  margin-top: 10px;
+}
+#hero .contact .email {
+  font-size: 30px;
+  color: #8f8dc5;
+  text-decoration: none;
 }
 #title h1 {
   width: 168px;

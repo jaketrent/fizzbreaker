@@ -93,26 +93,26 @@ body {
   right: -35px;
   z-index: 1;
 }
-#hero .contact {
+#hero #contact {
   margin: 20px 0 0 30px;
   text-transform: uppercase;
   color: #2e2c6d;
 }
-#hero .contact a {
+#hero #contact a {
   color: #2e2c6d;
   text-decoration: none;
 }
-#hero .contact .me {
+#hero #contact .me {
   font-size: 25px;
   color: #2e2c6d;
 }
-#hero .contact .me:after {
+#hero #contact .me:after {
   content: " >>";
 }
-#hero .contact .name  {
+#hero #contact .name  {
   margin-top: 10px;
 }
-#hero .contact .email {
+#hero #contact .email {
   font-size: 30px;
   color: #8f8dc5;
   text-decoration: none;

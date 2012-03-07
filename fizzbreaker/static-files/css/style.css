@@ -25,11 +25,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'TallDark', Arial, san-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: normal;
 }
 ul, ol {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+a {
+  color: #2e2c6d;
 }
 
 body {
@@ -56,7 +60,6 @@ body {
   letter-spacing: normal;
   font-size: 16px;
   color: #fff;
-  font-weight: normal;
 }
 #navbar nav {
   float: right;
@@ -198,18 +201,18 @@ body {
 .blurb h2 {
   font-size: 40px;
   color: #2e2c6d;
-  font-weight: normal;
   margin: 20px 0 10px 0;
 }
 
 #footer {
   clear: both;
-  margin-top: 40px;
+  margin: 40px 0 20px 30px;
   text-align: right;
   font-size: 12px;
 }
 #footer ul {
   margin-bottom: 8px;
+  overflow: auto;
 }
 #footer ul li {
   float: left;

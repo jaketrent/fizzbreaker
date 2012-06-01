@@ -40,7 +40,7 @@ img {
 }
 
 body {
-  background: #ecebd1 url(../img/bg-repeat.png);
+  background: #ecebd1;
 }
 .container {
   max-width: 1024px;

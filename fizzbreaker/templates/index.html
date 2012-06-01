@@ -23,134 +23,25 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script type="text/javascript" src="{{ STATIC_URL }}js/bubble.js"></script>
 </head>
 <body>
-  <div class="container">
-    <section id="navbar">
-      <header>
-        <h2>Custom web design &amp; development</h2>
-      </header>
-      <nav>
-        <ul>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#pricing">Services &amp; Pricing</a></li>
-        </ul>
-      </nav>
-    </section>
-    <section id="hero">
-      <h1 class="title"><img src="{{ STATIC_URL }}/img/bigfizz.png" alt="FizzBreaker" /></h1>
-      <h3 class="byline"><img src="{{ STATIC_URL }}/img/byline.png" alt="Let's make your site awesome" /></h3>
-      <div id="contact" class="side-bump">
-        <h3><a href="#" class="me">Contact me</a></h3>
-        <div class="name">Jake Trent</div>
-        <a href="mailto:fizzbreaker@gmail.com" class="email">fizzbreaker@gmail.com</a>
-        <div class="phone">or at: <a href="tel:801-293-4993">(801) 293-4993</a></div>
-      </div>
-    </section>
-    <section id="pricing" class="part-wide">
-      <article class="border offer">
-        <header>
-          <h2>Create Your Website</h2>
-        </header>
-        <p>
-          A happy site needs a unique, custom design. We will work with you to design a balanced layout, pleasing
-          color scheme, and matching typography. Then we'll code your website so it'll be ready to run on the
-          Internet.
-        </p>
-        <ul class="prices">
-          <li>
-            <header>
-              <h3>1st Page</h3>
-            </header>
-            <div class="circ circ-lrg">
-              <span class="usd">$</span>200
-            </div>
-          </li>
-          <li>
-            <header>
-              <h3>Additional Pages</h3>
-            </header>
-            <div class="circ circ-lrg">
-              <span class="usd">$</span>25
-              <div class="circ circ-sm unit">
-                /ea.
-              </div>
-            </div>
-          </li>
-        </ul>
-      </article>
-      <article class="border offer">
-        <header>
-          <h2>Host Your Website</h2>
-        </header>
-        <p>
-          A happy site also needs a home on the Internet. To keep your site up and available to your site visitors,
-          it needs an address and a place to live. Hosting takes care of this. We'll give you your new site to host
-          yourself or we can take care of it for you.
-        </p>
-        <ul class="prices">
-          <li>
-            <header>
-              <h3>Per Site</h3>
-            </header>
-            <div class="circ circ-lrg">
-              <span class="usd">$</span>10
-              <div class="circ circ-sm unit">
-                /mo.
-              </div>
-            </div>
-          </li>
-          <li>
-            <header>
-              <h3>&nbsp;</h3>
-            </header>
-            <div class="circ circ-lrg">
-              <span class="usd">$</span>100
-              <div class="circ circ-sm unit">
-                /yr.
-              </div>
-            </div>
-          </li>
-        </ul>
-      </article>
-    </section>
-    <section id="blurbs" class="side-bump part-wide">
-      <article class="half blurb">
-        <header>
-          <h2>10% Referral Bonus</h2>
-        </header>
-        <p>
-          Fizz Breaker is a new and growing business. As such, the referral bonus is generous and simple: If you refer a
-          new customer, you will receive 10% of the cost of the first completed job.
-        </p>
-        <p>
-          Know someone who's been wanting a website?  <a href="mailto:fizzbreaker@gmail.com">Email me</a>.
-        </p>
-      </article>
-      <article class="half blurb">
-        <header>
-          <h2>Service to Suit You</h2>
-        </header>
-        <p>
-          I am in the business of discovering the vision that you have for your website and making it a reality. If you
-          have specific requests, I will work to meet them. If you are looking for additional inspiration, I'll happily
-          help guide you to an awesome result for your site. Whatever your style, I want you to feel well-served. <a
-          href="tel:801-293-4993">Call me</a> and let's talk about what you'd like to see happen.
-        </p>
-      </article>
-    </section>
-    <footer id="footer" class="side-bump">
-      <nav>
-        <ul class="copyright">
-          <li>&copy; 2012 FizzBreaker Web Design and Development</li>
-          <li><a href="mailto:fizzbreaker@gmail.com">fizzbreaker@gmail.com</a></li>
-          <li>Salt Lake City, Utah</li>
-          <li><a href="tel:801-293-4993">(801) 293-4993</a></li>
-          <li><a href="http://twitter.com/fizzbreaker">@fizzbreaker</a></li>
-        </ul>
-      </nav>
-    </footer>
+  <div id="bg">
+    <!--<div class="lighten-top"></div>-->
   </div>
+  <div class="box">
+    <div class="porthole">
+      <canvas id="bubble" height="300" width="300"><p class="noCanvas">You need a <a href="http://www.google.com/chrome">modern browser</a> to view this.</p></canvas>
+    </div>
+    <img src="{{ STATIC_URL }}img/fizzWords2.png" />
+    <div class="contact">
+      <a href="https://twitter.com/intent/tweet?screen_name=aprilandjake">@aprilandjake</a>
+    </div>
+  </div>
+  <script>
+    var bubble = new Bubble();
+    bubble.Initialize('bubble');
+  </script>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];

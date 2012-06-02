@@ -5,7 +5,6 @@ function Bubble() {
   var HEIGHT = 300;
   var AIR_PERCENT = -.2;
 
-  var DETAIL = Math.round( WIDTH / 60 ); // The number of particles used to build up the wave
   var WATER_DENSITY = 1.5; //1.07;
 
   var BUBBLE_FREQUENCY = 400; // Milliseconds between bubbles being added to the wave

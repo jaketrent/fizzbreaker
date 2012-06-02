@@ -86,8 +86,6 @@ function Bubble() {
     context.fillStyle = "#rgba(0,200,255,0)";
     context.beginPath();
 
-    var b, p, d;
-
     for (i = 0; i < len; i++) {
       var b = bubbles[i];
       floatBubble(b);

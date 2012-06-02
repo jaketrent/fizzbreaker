@@ -40,6 +40,10 @@ body {
   min-height: 100%;
   height: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
   background-image: url(../img/dark_wall.png);
 }
 #bg {
@@ -51,6 +55,7 @@ body {
   z-index: -1;
   pointer-events: none;
   background-image: -webkit-radial-gradient(50% 50%, ellipse closest-side, rgba(255, 255, 255, .2) 1%, rgba(67, 68, 72, 0.45) 100%);
+  background-image: -moz-radial-gradient(50% 50%, ellipse closest-side, rgba(255, 255, 255, .2) 1%, rgba(67, 68, 72, 0.45) 100%)
 }
 #bg .lighten-top {
   position: fixed;
@@ -58,6 +63,11 @@ body {
   height: 50%;
   z-index: 10;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.64)), to(rgba(255, 255, 255, 0)));
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient( rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0));
+
 }
 .container {
   margin: 200px auto;

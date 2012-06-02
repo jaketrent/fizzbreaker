@@ -50,7 +50,23 @@ function Bubble() {
     }
   };
 
-  function renderBurst(b, context) {
+  function floatBubble(b) {
+    var p = GetClosestParticle(b);
+
+    b.velocity.y /= ( b.y > p.y ) ? WATER_DENSITY : AIR_DENSITY;
+    b.velocity.y += ( p.y > b.y ) ? 1 / b.mass : -((b.y - p.y) * 0.01) / b.mass;
+    b.y += b.velocity.y;
+
+    if (b.x > WIDTH - b.currentSize) b.velocity.x = -b.velocity.x;
+    if (b.x < b.currentSize) b.velocity.x = Math.abs(b.velocity.x);
+
+    b.velocity.x /= 1.04;
+    b.velocity.x = b.velocity.x < 0 ? Math.min(b.velocity.x, -.8 / b.mass) : Math.max(b.velocity.x, .8 / b.mass)
+    b.x += b.velocity.x;
+    return p;
+  }
+
+  function burstBubble(b, context) {
     b.velocity.x /= 1.15;
     b.velocity.y /= 1.05;
 
@@ -128,25 +144,14 @@ function Bubble() {
 
     for (i = 0; i < len; i++) {
       var b = bubbles[i];
-      var p = GetClosestParticle( b );
-
-      b.velocity.y /= ( b.y > p.y ) ? WATER_DENSITY : AIR_DENSITY;
-      b.velocity.y += ( p.y > b.y ) ? 1/b.mass : -((b.y-p.y)*0.01)/b.mass;
-      b.y += b.velocity.y;
-
-      if( b.x > WIDTH - b.currentSize ) b.velocity.x = -b.velocity.x;
-      if( b.x < b.currentSize ) b.velocity.x = Math.abs(b.velocity.x);
-
-      b.velocity.x /= 1.04;
-      b.velocity.x = b.velocity.x < 0 ? Math.min( b.velocity.x, -.8/b.mass ) : Math.max( b.velocity.x, .8/b.mass )
-      b.x += b.velocity.x;
+      floatBubble(b);
 
       if( b.dissolved == false ) {
         context.moveTo(b.x,b.y);
         context.arc(b.x,b.y,b.currentSize,0,Math.PI*2,true);
       }
       else {
-        renderBurst(b, context);
+        burstBubble(b, context);
       }
 
     }

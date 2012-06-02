@@ -5,11 +5,8 @@ function Bubble() {
   var HEIGHT = 300;
   var AIR_PERCENT = -.2;
 
-  var DENSITY = .75;
-  var FRICTION = 1.14;
   var DETAIL = Math.round( WIDTH / 60 ); // The number of particles used to build up the wave
   var WATER_DENSITY = 1.5; //1.07;
-  var AIR_DENSITY = 2; //1.02;
 
   var BUBBLE_FREQUENCY = 400; // Milliseconds between bubbles being added to the wave
 
@@ -51,10 +48,8 @@ function Bubble() {
   };
 
   function floatBubble(b) {
-    var p = GetClosestParticle(b);
-
-    b.velocity.y /= ( b.y > p.y ) ? WATER_DENSITY : AIR_DENSITY;
-    b.velocity.y += ( p.y > b.y ) ? 1 / b.mass : -((b.y - p.y) * 0.01) / b.mass;
+    b.velocity.y /= WATER_DENSITY;
+    b.velocity.y += -(b.y * 0.01) / b.mass;
     b.y += b.velocity.y;
 
     if (b.x > WIDTH - b.currentSize) b.velocity.x = -b.velocity.x;
@@ -63,7 +58,6 @@ function Bubble() {
     b.velocity.x /= 1.04;
     b.velocity.x = b.velocity.x < 0 ? Math.min(b.velocity.x, -.8 / b.mass) : Math.max(b.velocity.x, .8 / b.mass)
     b.x += b.velocity.x;
-    return p;
   }
 
   function burstBubble(b, context) {
@@ -99,9 +93,11 @@ function Bubble() {
     context.beginPath();
     context.moveTo(particles[0].x, particles[0].y);
 
-    context.fillRect(0,0,WIDTH, HEIGHT);
+//    context.fillRect(0,0,WIDTH, HEIGHT);
+    context.arc(150, 150, 150, 0, Math.PI*2, true);
+    context.fill();
 
-    len = bubbles.length;
+    var len = bubbles.length;
 
     context.fillStyle = "#rgba(0,200,255,0)";
     context.beginPath();
@@ -123,25 +119,6 @@ function Bubble() {
     }
 
     context.fill();
-  }
-
-  function GetClosestParticle(point){
-    var closestIndex = 0;
-    var closestDistance = 1000;
-
-    var len = particles.length;
-
-    for( var i = 0; i < len; i++ ) {
-      var thisDistance = DistanceBetween( particles[i], point );
-
-      if( thisDistance < closestDistance ) {
-        closestDistance = thisDistance;
-        closestIndex = i;
-      }
-
-    }
-
-    return particles[closestIndex];
   }
 
   function CreateBubble() {

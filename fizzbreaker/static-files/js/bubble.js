@@ -50,6 +50,28 @@ function Bubble() {
     }
   };
 
+  function renderBurst(b, context) {
+    b.velocity.x /= 1.15;
+    b.velocity.y /= 1.05;
+
+    while (b.children.length < b.dissolveSize) {
+      b.children.push({ x:0, y:0, size:Math.random() * b.dissolveSize, velocity:{ x:(Math.random() * 20) - 10, y:-(Math.random() * 10) } });
+    }
+
+    for (var j = 0; j < b.children.length; j++) {
+      var c = b.children[j];
+      c.x += c.velocity.x;
+      c.y += c.velocity.y;
+      c.velocity.x /= 1.1;
+      c.velocity.y += 0.4;
+      c.size /= 1.1;
+
+      context.moveTo(b.x + c.x, b.y + c.y); // needed in ff
+      context.arc(b.x + c.x, b.y + c.y, c.size, 0, Math.PI * 2, true);
+    }
+    return {j:j, c:c};
+  }
+
   function TimeUpdate(e) {
 
     var gradientFill = context.createLinearGradient(WIDTH*AIR_PERCENT,HEIGHT*.2,WIDTH*.5,HEIGHT);
@@ -124,25 +146,7 @@ function Bubble() {
         context.arc(b.x,b.y,b.currentSize,0,Math.PI*2,true);
       }
       else {
-        b.velocity.x /= 1.15;
-        b.velocity.y /= 1.05;
-
-        while( b.children.length < b.dissolveSize ) {
-          b.children.push( { x:0, y:0, size: Math.random()*b.dissolveSize, velocity: { x: (Math.random()*20)-10, y: -(Math.random()*10) } } );
-        }
-
-        for( var j = 0; j < b.children.length; j++ ) {
-          var c = b.children[j];
-          c.x += c.velocity.x;
-          c.y += c.velocity.y;
-          c.velocity.x /= 1.1;
-          c.velocity.y += 0.4;
-          c.size /= 1.1;
-
-          context.moveTo(b.x+c.x,b.y+c.y); // needed in ff
-          context.arc(b.x+c.x,b.y+c.y,c.size,0,Math.PI*2,true);
-        }
-
+        renderBurst(b, context);
       }
 
     }

@@ -126,7 +126,7 @@ function Bubble() {
     var minSize = 15;
     var maxSize = 30;
     var size = minSize + Math.random() * ( maxSize - minSize );
-    var catapult = 30;
+    var catapult = 20;
 
     var b = {
       x: maxSize + ( Math.random() * ( WIDTH - maxSize ) ),

@@ -99,41 +99,7 @@ function Bubble() {
     context.beginPath();
     context.moveTo(particles[0].x, particles[0].y);
 
-    var len = particles.length;
-    var i;
-
-    var current, previous, next;
-
-    for( i = 0; i < len; i++ ) {
-      current = particles[i];
-      previous = particles[i-1];
-      next = particles[i+1];
-
-      if (previous && next) {
-
-        var forceY = 0;
-
-        forceY += -DENSITY * ( previous.y - current.y );
-        forceY += DENSITY * ( current.y - next.y );
-        forceY += DENSITY/15 * ( current.y - current.original.y );
-
-        current.velocity.y += - ( forceY / current.mass ) + current.force.y;
-        current.velocity.y /= FRICTION;
-        current.force.y /= FRICTION;
-        current.y += current.velocity.y;
-
-        // cx, cy, ax, ay
-        context.quadraticCurveTo(previous.x, previous.y, previous.x + (current.x - previous.x) / 2, previous.y + (current.y - previous.y) / 2);
-      }
-
-    }
-
-    context.lineTo(particles[particles.length-1].x, particles[particles.length-1].y);
-    context.lineTo(WIDTH, HEIGHT*2);
-    context.lineTo(0, HEIGHT*2);
-    context.lineTo(particles[0].x, particles[0].y);
-
-    context.fill();
+    context.fillRect(0,0,WIDTH, HEIGHT);
 
     len = bubbles.length;
 

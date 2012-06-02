@@ -14,7 +14,7 @@ function Bubble() {
   var BIG_BUBBLE_DISSOLVE = 20; // How many particles a bubble dissolves into when being clicked
   var SMALL_BUBBLE_DISSOLVE = 6;
 
-  var canvas, context, particles, bubbles;
+  var canvas, context, bubbles;
 
   var timeUpdateInterval, bubbleInterval, twitchInterval;
 
@@ -24,20 +24,7 @@ function Bubble() {
     if (canvas && canvas.getContext) {
       context = canvas.getContext('2d');
 
-      particles = [];
       bubbles = [];
-
-      // Generate our wave particles
-      for( var i = 0; i < DETAIL+1; i++ ) {
-        particles.push( {
-          x: WIDTH / (DETAIL-4) * (i-2), // Pad by two particles on each side
-          y: HEIGHT*AIR_PERCENT, // how full
-          original: {x: 0, y: HEIGHT * AIR_PERCENT },
-          velocity: {x: 0, y: Math.random()*3}, // Random for some initial movement in the wave
-          force: {x: 0, y: 0},
-          mass: 10
-        } );
-      }
 
       timeUpdateInterval = setInterval( TimeUpdate, 40 );
       bubbleInterval = setInterval( CreateBubble, BUBBLE_FREQUENCY );
@@ -91,9 +78,7 @@ function Bubble() {
     context.clearRect(0, 0, WIDTH, HEIGHT);
     context.fillStyle = gradientFill;
     context.beginPath();
-    context.moveTo(particles[0].x, particles[0].y);
 
-//    context.fillRect(0,0,WIDTH, HEIGHT);
     context.arc(150, 150, 150, 0, Math.PI*2, true);
     context.fill();
 

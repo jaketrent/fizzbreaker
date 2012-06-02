@@ -24,6 +24,7 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <script type="text/javascript" src="{{ STATIC_URL }}js/bubble.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/client.js"></script>
 </head>
 <body>
   <div id="bg">
@@ -38,7 +39,12 @@
       <a href="https://twitter.com/intent/tweet?screen_name=aprilandjake">@aprilandjake</a>
     </div>
   </div>
+
   <script>
+    BrowserDetect.init();
+    if (BrowserDetect.OS === 'Mac' && (BrowserDetect.browser === 'Safari' || BrowserDetect.browser === 'Chrome')) {
+      document.getElementsByClassName('porthole')[0].className += ' noclip';
+    }
     var bubble = new Bubble();
     bubble.Initialize('bubble');
   </script>

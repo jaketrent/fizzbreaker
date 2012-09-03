@@ -21,16 +21,15 @@ a
   color #2e2c6d
 img
   max-width 100%
-.container
-  max-width 1024px
-  width 90%
-  margin 0 auto
 body
   padding 0
   border 0
   min-height 100%
-  height 100%
   background-image url(../img/dark_wall.png)
+
+.container
+  max-width 100%
+  margin 0 auto
 #bg
   position fixed
   top -10%
@@ -54,7 +53,6 @@ body
 .container
   margin 200px auto
   width 500px
-  font-size 28px
   text-shadow 2px 2px #fff, 5px, -5px #fff
   -webkit-font-smoothing antialiased
 p.noCanvas
@@ -62,8 +60,8 @@ p.noCanvas
   font-size 24px
   text-align center
   margin-top 150px
+
 .box
-  height 300px
   width 300px
   max-width 100%
   position relative
@@ -85,7 +83,7 @@ img
   z-index 2
 .contact
   text-align center
-  margin-top 45px
+  margin-top 20px
   a
     text-decoration none
     color #363738
@@ -93,6 +91,47 @@ img
     font-size 18px
     &:hover
       color #787878
+
+.sections
+  overflow hidden
+  margin 0 auto
+  display block
+  width 342px
+  //border 1px solid red
+  padding-top 50px
+  li
+    float left
+    a
+      animation fadeEnter 2s 1
+      -moz-animation fadeEnter 2s 1
+      -webkit-animation fadeEnter 2s 1
+      -o-animation fadeEnter 2s 1
+      display block
+      height 100px
+      width 100px
+      line-height 100px
+      text-align center
+      text-decoration none
+      color #6c6c6c
+      background #2e2c6d
+      border-radius 50%
+      margin 7px
+      text-transform uppercase
+      font-size .8em
+      overflow hidden
+      white-space nowrap
+
+@keyframes fadeEnter
+   0%
+     opacity 0
+     -webkit-transform translate(0, -50px)
+   80%
+     opacity .6
+   100%
+     opacity 1.0
+     -webkit-transform translate(0, 0)
+
+
 @media screen and (max-height: 580px)
   .box
     margin-top 50px

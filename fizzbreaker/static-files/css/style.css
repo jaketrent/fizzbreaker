@@ -127,3 +127,8 @@ img {
     margin-top: 50px;
   }
 }
+@media screen and (max-height: 320px) {
+  .box {
+    margin-top: 8px;
+  }
+}

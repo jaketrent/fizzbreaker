@@ -31,7 +31,7 @@
     <!--<div class="lighten-top"></div>-->
   </div>
 
-  <canvas id="bubble-column" height="500" width="100">
+  <canvas id="bubble-column" class="fade-in one" height="500" width="100">
     <p class="noCanvas">You need a <a href="http://www.google.com/chrome">modern browser</a> to view this.</p>
   </canvas>
 
@@ -42,8 +42,9 @@
       is_circle: false,
       gradient_fill_pts: {
         0: 'rgba(153, 200, 30, 1)',
-        1: 'rgba(46,44,109,0)'
-      }
+        1: 'rgba(153, 200, 30, .8)'
+      },
+      air_percent:0
     });
     bubble.Initialize('bubble-column');
   </script>

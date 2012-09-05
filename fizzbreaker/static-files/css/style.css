@@ -4,6 +4,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, san-serif;
   color: #6c6c6c;
+  -webkit-font-smoothing: antialiased;
 }
 section,
 article,
@@ -70,12 +71,6 @@ body {
   background-image: -ms-linear-gradient(rgba(255,255,255,0.64), rgba(255,255,255,0));
   background-image: linear-gradient(rgba(255,255,255,0.64), rgba(255,255,255,0));
 }
-.container {
-  margin: 200px auto;
-  width: 500px;
-  text-shadow: 2px 2px #fff, 5px, -5px #fff;
-  -webkit-font-smoothing: antialiased;
-}
 p.noCanvas {
   color: #999;
   font-size: 24px;
@@ -89,7 +84,7 @@ p.noCanvas {
   margin: 0 auto;
   margin-top: 200px;
 }
-.porthole {
+.box .porthole {
   height: 300px;
   width: 300px;
   max-width: 100%;
@@ -98,32 +93,25 @@ p.noCanvas {
   overflow: hidden;
   border: 3px solid #add8e6;
 }
-img {
+.box img {
   position: absolute;
   max-width: 100%;
   top: 7px;
   left: 3px;
   z-index: 2;
 }
-.contact {
+.tagline {
   text-align: center;
-  margin-top: 20px;
-}
-.contact a {
-  text-decoration: none;
-  color: #363738;
-  text-shadow: #505050 0 1px 1px;
-  font-size: 18px;
-}
-.contact a:hover {
-  color: #787878;
+  color: #add8e6;
+  margin-top: 25px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 .sections {
   overflow: hidden;
   margin: 0 auto;
   display: block;
   width: 354px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 .sections li {
   float: left;
@@ -164,6 +152,19 @@ img {
 .sections li a:hover {
   background: #2e2c6d;
   -webkit-transform: translate(0, -10px);
+}
+.contact {
+  text-align: center;
+  margin-top: 20px;
+}
+.contact a {
+  text-decoration: none;
+  color: #363738;
+  text-shadow: #505050 0 1px 1px;
+  font-size: 18px;
+}
+.contact a:hover {
+  color: #787878;
 }
 .fade-in {
   animation: fadeEnter 2s 1;

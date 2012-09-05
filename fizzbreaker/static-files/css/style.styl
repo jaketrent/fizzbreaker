@@ -6,6 +6,8 @@ html, body
   padding 0
   font-family Arial, Helvetica, san-serif
   color #6c6c6c
+  -webkit-font-smoothing antialiased
+
 section, article, header, aside, footer
   display block
 h1, h2, h3, h4, h5, h6
@@ -53,11 +55,6 @@ body
     background-image -o-linear-gradient( rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0))
     background-image -ms-linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0))
     background-image linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0))
-.container
-  margin 200px auto
-  width 500px
-  text-shadow 2px 2px #fff, 5px, -5px #fff
-  -webkit-font-smoothing antialiased
 p.noCanvas
   color #999999
   font-size 24px
@@ -70,30 +67,26 @@ p.noCanvas
   position relative
   margin 0 auto
   margin-top 200px
-.porthole
-  height 300px
-  width 300px
-  max-width 100%
-  -webkit-border-radius 50%
-  border-radius 50%
-  overflow hidden
-  border 3px solid light-blue
-img
-  position absolute
-  max-width 100%
-  top 7px
-  left 3px
-  z-index 2
-.contact
+  .porthole
+    height 300px
+    width 300px
+    max-width 100%
+    -webkit-border-radius 50%
+    border-radius 50%
+    overflow hidden
+    border 3px solid light-blue
+  img
+    position absolute
+    max-width 100%
+    top 7px
+    left 3px
+    z-index 2
+
+.tagline
   text-align center
-  margin-top 20px
-  a
-    text-decoration none
-    color #363738
-    text-shadow #505050 0 1px 1px
-    font-size 18px
-    &:hover
-      color #787878
+  color light-blue
+  margin-top 25px
+  text-shadow 2px 2px 4px rgba(0,0,0,.5)
 
 .sections
   overflow hidden
@@ -101,7 +94,7 @@ img
   display block
   width 354px
   //border 1px solid red
-  padding-top 50px
+  padding-top 30px
   li
     float left
     a
@@ -134,6 +127,17 @@ img
         background purple
         -webkit-transform translate(0,-10px)
 
+.contact
+  text-align center
+  margin-top 20px
+  a
+    text-decoration none
+    color #363738
+    text-shadow #505050 0 1px 1px
+    font-size 18px
+    &:hover
+      color #787878
+
 .fade-in
   animation fadeEnter 2s 1
   -moz-animation fadeEnter 2s 1
@@ -155,12 +159,12 @@ img
     animation-delay 3.4s
 
 @keyframes fadeEnter
-   0%
-     opacity 0
-     -webkit-transform translate(0, -50px)
-   100%
-     opacity 1.0
-     -webkit-transform translate(0, 0)
+  0%
+    opacity 0
+    -webkit-transform translate(0, -50px)
+  100%
+    opacity 1.0
+    -webkit-transform translate(0, 0)
 
 
 @media screen and (max-height: 580px)

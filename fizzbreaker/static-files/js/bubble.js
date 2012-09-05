@@ -10,7 +10,11 @@ function Bubble(settings) {
     max_bubbles: 5, // 60 // max # bubbles'
     big_bubbles_dissolve: 20, // # of particles when explode
     small_bubble_dissolve: 6,
-    is_circle: true
+    is_circle: true,
+    gradient_fill_pts: {
+      0: '#2e2c6d',
+      1: 'rgba(46,44,109,0)'
+    }
   };
   var opts = _.extend({}, defaults, settings);
 
@@ -70,10 +74,11 @@ function Bubble(settings) {
   }
 
   function TimeUpdate(e) {
-
+    var pt;
     var gradientFill = context.createLinearGradient(opts.width*opts.air_percent,opts.height*.2,opts.width*.5,opts.height);
-    gradientFill.addColorStop(0,'#2e2c6d');
-    gradientFill.addColorStop(1,'rgba(46,44,109,0)');
+    for (pt in opts.gradient_fill_pts) {
+      gradientFill.addColorStop(pt, opts.gradient_fill_pts[pt]);
+    }
 
     context.clearRect(0, 0, opts.width, opts.height);
     context.fillStyle = gradientFill;

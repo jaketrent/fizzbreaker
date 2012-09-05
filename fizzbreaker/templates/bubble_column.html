@@ -36,7 +36,15 @@
   </canvas>
 
   <script>
-    var bubble = new Bubble();
+    var bubble = new Bubble({
+      height: 500,
+      width: 100,
+      is_circle: false,
+      gradient_fill_pts: {
+        0: 'rgba(153, 200, 30, 1)',
+        1: 'rgba(46,44,109,0)'
+      }
+    });
     bubble.Initialize('bubble-column');
   </script>
   <script type="text/javascript">

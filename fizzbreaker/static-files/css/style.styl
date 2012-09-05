@@ -1,3 +1,5 @@
+@import 'nib'
+
 light-blue = #add8e6
 purple = #2e2c6d
 
@@ -50,10 +52,6 @@ body
     width 120%
     height 50%
     z-index 10
-    background-image -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.64)), to(rgba(255, 255, 255, 0)))
-    background-image -moz-linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0))
-    background-image -o-linear-gradient( rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0))
-    background-image -ms-linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0))
     background-image linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0))
 p.noCanvas
   color #999999
@@ -71,7 +69,6 @@ p.noCanvas
     height 300px
     width 300px
     max-width 100%
-    -webkit-border-radius 50%
     border-radius 50%
     overflow hidden
     border 3px solid light-blue
@@ -93,7 +90,6 @@ p.noCanvas
   margin 0 auto
   display block
   width 354px
-  //border 1px solid red
   padding-top 30px
   li
     float left
@@ -112,20 +108,11 @@ p.noCanvas
       font-size .8em
       overflow hidden
       white-space nowrap
-      background -moz-linear-gradient(top, rgba(46,44,109,1) 0%, rgba(46,44,109,0) 100%) /* FF3.6+ */
-      background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(46,44,109,1)), color-stop(100%,rgba(125,185,232,0))) /* Chrome,Safari4+ */
-      background -webkit-linear-gradient(top, rgba(46,44,109,1) 0%,rgba(46,44,109,0) 100%) /* Chrome10+,Safari5.1+ */
-      background -o-linear-gradient(top, rgba(46,44,109,1) 0%,rgba(46,44,109,0) 100%) /* Opera 11.10+ */
-      background -ms-linear-gradient(top, rgba(46,44,109,1) 0%,rgba(46,44,109,0) 100%) /* IE10+ */
-      background linear-gradient(to bottom, rgba(46,44,109,1) 0%,rgba(46,44,109,0) 100%) /* W3C */
-      -webkit-transition all 300ms linear
-      -moz-transition all 300ms linear
-      -ms-transition all 300ms linear
-      -o-transition all 300ms linear
+      background linear-gradient(top, rgba(46,44,109,1) 0%,rgba(46,44,109,0) 100%) /* W3C */
       transition all 300ms linear
       &:hover
         background purple
-        -webkit-transform translate(0,-10px)
+        transform translate(0,-10px)
 
 .contact
   text-align center
@@ -140,31 +127,22 @@ p.noCanvas
 
 .fade-in
   animation fadeEnter 2s 1
-  -moz-animation fadeEnter 2s 1
-  -webkit-animation fadeEnter 2s 1
-  -o-animation fadeEnter 2s 1
-  -webkit-animation-fill-mode:forwards
+  animation-fill-mode:forwards
   opacity 0
   &.one
-    -webkit-animation-delay 3s
-    -moz-animation-delay 3s
     animation-delay 3s
   &.two
-    -webkit-animation-delay 3.2s
-    -moz-animation-delay 3.2s
     animation-delay 3.2s
   &.three
-    -webkit-animation-delay 3.4s
-    -moz-animation-delay 3.4s
     animation-delay 3.4s
 
 @keyframes fadeEnter
   0%
     opacity 0
-    -webkit-transform translate(0, -50px)
+    transform translate(0, -50px)
   100%
     opacity 1.0
-    -webkit-transform translate(0, 0)
+    transform translate(0, 0)
 
 
 @media screen and (max-height: 580px)

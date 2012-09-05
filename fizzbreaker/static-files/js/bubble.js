@@ -9,7 +9,8 @@ function Bubble(settings) {
     bubble_frequency: 400, // ms between bubble add
     max_bubbles: 5, // 60 // max # bubbles'
     big_bubbles_dissolve: 20, // # of particles when explode
-    small_bubble_dissolve: 6
+    small_bubble_dissolve: 6,
+    is_circle: true
   };
   var opts = _.extend({}, defaults, settings);
 
@@ -76,10 +77,12 @@ function Bubble(settings) {
 
     context.clearRect(0, 0, opts.width, opts.height);
     context.fillStyle = gradientFill;
-    context.beginPath();
-
-    context.arc(150, 150, 150, 0, Math.PI*2, true);
-    context.fill();
+    if (opts.is_circle) {
+      context.arc(opts.width / 2, opts.width / 2, 150, 0, Math.PI * 2, true);
+      context.fill();
+    } else {
+      context.fillRect(0,0,opts.width, opts.height);
+    }
 
     var len = bubbles.length;
 

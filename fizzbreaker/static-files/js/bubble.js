@@ -1,17 +1,17 @@
 
-function Bubble() {
+function Bubble(settings) {
 
-  var WIDTH = 300;
-  var HEIGHT = 300;
-  var AIR_PERCENT = -.2;
-
-  var WATER_DENSITY = 1.5; //1.07;
-
-  var BUBBLE_FREQUENCY = 400; // Milliseconds between bubbles being added to the wave
-
-  var MAX_BUBBLES = 5; //60; // The maximum number of bubbles visible before FIFO is applied
-  var BIG_BUBBLE_DISSOLVE = 20; // How many particles a bubble dissolves into when being clicked
-  var SMALL_BUBBLE_DISSOLVE = 6;
+  var defaults = {
+    width: 300,
+    height: 300,
+    air_percent: -.2,
+    water_density: 1.5, //1.07
+    bubble_frequency: 400, // ms between bubble add
+    max_bubbles: 5, // 60 // max # bubbles'
+    big_bubbles_dissolve: 20, // # of particles when explode
+    small_bubble_dissolve: 6
+  };
+  var opts = _.extend({}, defaults, settings);
 
   var canvas, context, bubbles;
 
@@ -26,7 +26,7 @@ function Bubble() {
       bubbles = [];
 
       timeUpdateInterval = setInterval( TimeUpdate, 40 );
-      bubbleInterval = setInterval( CreateBubble, BUBBLE_FREQUENCY );
+      bubbleInterval = setInterval( CreateBubble, opts.bubble_frequency );
 
       CreateBubble();
 
@@ -34,11 +34,11 @@ function Bubble() {
   };
 
   function floatBubble(b) {
-    b.velocity.y /= WATER_DENSITY;
+    b.velocity.y /= opts.water_density;
     b.velocity.y += -(b.y * 0.01) / b.mass;
     b.y += b.velocity.y;
 
-    if (b.x > WIDTH - b.currentSize) b.velocity.x = -b.velocity.x;
+    if (b.x > opts.width - b.currentSize) b.velocity.x = -b.velocity.x;
     if (b.x < b.currentSize) b.velocity.x = Math.abs(b.velocity.x);
 
     b.velocity.x /= 1.04;
@@ -70,11 +70,11 @@ function Bubble() {
 
   function TimeUpdate(e) {
 
-    var gradientFill = context.createLinearGradient(WIDTH*AIR_PERCENT,HEIGHT*.2,WIDTH*.5,HEIGHT);
+    var gradientFill = context.createLinearGradient(opts.width*opts.air_percent,opts.height*.2,opts.width*.5,opts.height);
     gradientFill.addColorStop(0,'#2e2c6d');
     gradientFill.addColorStop(1,'rgba(46,44,109,0)');
 
-    context.clearRect(0, 0, WIDTH, HEIGHT);
+    context.clearRect(0, 0, opts.width, opts.height);
     context.fillStyle = gradientFill;
     context.beginPath();
 
@@ -104,14 +104,14 @@ function Bubble() {
   }
 
   function CreateBubble() {
-    if( bubbles.length > MAX_BUBBLES ) {
+    if( bubbles.length > opts.max_bubbles ) {
       var i = 0;
 
       if( bubbles[i].dissolved ) {
         // Find a bubble thats not already on its way to dissolving
         for( ; i < bubbles.length; i++ ) {
           if( bubbles[i].dissolved == false ) {
-            bubbles[i].dissolveSize = SMALL_BUBBLE_DISSOLVE;
+            bubbles[i].dissolveSize = opts.small_bubble_dissolve;
             DissolveBubble( i );
             break;
           }
@@ -129,13 +129,13 @@ function Bubble() {
     var catapult = 20;
 
     var b = {
-      x: maxSize + ( Math.random() * ( WIDTH - maxSize ) ),
-      y: HEIGHT - maxSize,
+      x: maxSize + ( Math.random() * ( opts.width - maxSize ) ),
+      y: opts.height - maxSize,
       velocity: {x: (Math.random()*catapult)-catapult/2,y: 0},
       size: size,
       mass: (size / maxSize)+1,
       dissolved: false,
-      dissolveSize: BIG_BUBBLE_DISSOLVE,
+      dissolveSize: opts.big_bubbles_dissolve,
       children: []
     };
 

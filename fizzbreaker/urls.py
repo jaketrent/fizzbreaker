@@ -10,6 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     (r'^$', direct_to_template, {'template': 'index.html'}),
+    (r'^bubbles/$', direct_to_template, {'template': 'bubble_column.html'}),
     (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/img/favicon.ico'}),
     (r'^robots\.txt$', direct_to_template, {'template': 'robots.txt', 'mimetype': 'text/plain'}),
     # url(r'^$', 'fizzbreaker.views.home', name='home'),

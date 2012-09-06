@@ -1,4 +1,5 @@
 @import 'nib'
+@import 'animation'
 
 light-blue = #add8e6
 purple = #2e2c6d
@@ -124,26 +125,6 @@ p.noCanvas
     font-size 18px
     &:hover
       color #787878
-
-.fade-in
-  animation fadeEnter 2s 1
-  animation-fill-mode:forwards
-  opacity 0
-  &.one
-    animation-delay 3s
-  &.two
-    animation-delay 3.2s
-  &.three
-    animation-delay 3.4s
-
-@keyframes fadeEnter
-  0%
-    opacity 0
-    transform translate(0, -50px)
-  100%
-    opacity 1.0
-    transform translate(0, 0)
-
 
 @media screen and (max-height: 580px)
   .box

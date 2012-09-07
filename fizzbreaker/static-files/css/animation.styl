@@ -11,6 +11,12 @@
     opacity 0
   100%
     opacity 1.0
+// multiple shadow vals not working -- commas removed
+//@keyframes pulseShadowAnim
+//  0%
+//    box-shadow: 0 0 0 2px #000;
+//  100%
+//    box-shadow: 0 0 0 2px #000, 0 0 0 5px #fff, 0 0 0 8px rgba(255, 4, 80, 0.25), 0 0 0 12px #fff, 0 0 0 15px rgba(255, 4, 80, 0.35);
 
 
 // CLASSES
@@ -22,7 +28,9 @@
   animation fadeInAnim 2s 1
   animation-fill-mode:forwards
   opacity 0
-
+//.pulse
+//  animation-direction: alternate;
+//  animation: pulseShadowAnim infinite 2s ease-in-out;
 
 // DELAYS
 .delay-1

@@ -447,7 +447,6 @@ p.noCanvas {
   background: -o-linear-gradient(top, #2e2c6d 0%, rgba(46,44,109,0) 100%);
   background: -ms-linear-gradient(top, #2e2c6d 0%, rgba(46,44,109,0) 100%);
   background: linear-gradient(top, #2e2c6d 0%, rgba(46,44,109,0) 100%);
-/* W3C */
   -webkit-transition: all 300ms linear;
   -moz-transition: all 300ms linear;
   -o-transition: all 300ms linear;

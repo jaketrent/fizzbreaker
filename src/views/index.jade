@@ -1,6 +1,22 @@
 extends layout
 
+title='Awesome'
+
 block content
-	div
-		a(id='sender')='Send a Message'
-		ul(id='receiver')
+  .fade-in.delay-1.box
+    .porthole
+      canvas(id='bubble', height='300', width='300')
+        p.noCanvas
+          |You need a a(href="http://www.google.com/chrome") modern browser</a> to view this.
+    img(src='/img/fizzWords2.png')
+  h2.fade-in.delay-3.tagline
+    |Stop Waiting.  Start Creating.
+  ul.sections
+    li
+      a.fade-slide-top.delay-5(href='/bubbles/')='Services'
+    li
+      a.fade-slide-top.delay-5-2(href='/bubbles/')='Portfolio'
+    li
+      a.fade-slide-top.delay-5-4(href='/bubbles/')='Contact'
+  .contact
+    a(href='https://twitter.com/intent/tweet?screen_name=aprilandjake')='@aprilandjake'

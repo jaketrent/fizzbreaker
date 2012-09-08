@@ -38,14 +38,7 @@ server.listen( port);
 
 
 server.get('/', function(req,res){
-  res.render('index.jade', {
-    locals : { 
-              title : 'Your Page Title'
-             ,description: 'Your Page Description'
-             ,author: 'Your Name'
-             ,analyticssiteid: 'XXXXXXX' 
-            }
-  });
+  res.render('index.jade');
 });
 
 

@@ -11,16 +11,25 @@ html.no-js(lang='en')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title=title
-    meta(name="description", content=description)
-    meta(name="author", content=author)
+    meta(name='google-site-verification, content='K_Dl_YLZgW7HegnVNitELeZ8vXWsjkvs7JQdaptVnLA')
+    meta(name='google-site-verification, content='odib3sr4MtQNAeJMyIi9z0tpY2Q41gRN9F15jWyYZPE')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name="keywards", content='custom web design, fizzbreaker, fizz breaker, jake trent, custom web development')
+    meta(name="description", content='Stop waiting.  Start creating.  Software custom to your life and your business.')
+    meta(name="author", content='Jake Trent')
+    meta(name="copyright", content='Copyright 2012 FizzBreaker. All rights reserved.')
     meta(name="viewport", content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='/static/css/style.css')
-    //-script(src='js/libs/modernizr-2.0.6.min.js')
+    title=title
+    link(rel='shortcut icon', href='/favicon.ico')
+    link(rel='stylesheet', href='/css/style.css')
+    //if lt IE 9
+      script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
   body
-    block header
+    div(id='bg')
+    .container
+      block header
 
-    block content
+      block content
 
     block footer
       footer

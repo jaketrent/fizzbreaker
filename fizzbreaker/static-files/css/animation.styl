@@ -1,4 +1,11 @@
 // KEYFRAMES
+@keyframes fadeSlideLeft50Anim
+  0%
+    opacity 0
+    transform translate(-50px, 0)
+  100%
+    opacity 1.0
+    transform translate(0, 0)
 @keyframes fadeSlideTop50Anim
   0%
     opacity 0
@@ -22,6 +29,10 @@
 // CLASSES
 .fade-slide-top
   animation fadeSlideTop50Anim 2s 1
+  animation-fill-mode:forwards
+  opacity 0
+.fade-slide-left
+  animation fadeSlideLeft50Anim 2s 1
   animation-fill-mode:forwards
   opacity 0
 .fade-in

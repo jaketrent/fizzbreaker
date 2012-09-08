@@ -24,42 +24,18 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <script type="text/javascript" src="{{ STATIC_URL }}js/underscore-1.3.3.js"></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/bubble.min.js"></script>
 </head>
 <body>
   <div id="bg">
     <!--<div class="lighten-top"></div>-->
   </div>
 
-  <canvas id="bubble-column" class="fade-in one" height="500" width="100">
+  <canvas id="bubble-column" class="fade-slide-left delay-1 bubble-col" height="500" width="100">
     <p class="noCanvas">You need a <a href="http://www.google.com/chrome">modern browser</a> to view this.</p>
   </canvas>
 
-  <script>
-    var bubble = new Bubble({
-      height: 500,
-      width: 100,
-      is_circle: false,
-      gradient_fill_pts: {
-        0: 'rgba(153, 200, 30, 1)',
-        1: 'rgba(153, 200, 30, .8)'
-      },
-      air_percent:0
-    });
-    bubble.Initialize('bubble-column');
-  </script>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-28055959-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/zepto.min.1.0rc1.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/bubble.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
 </body>
 </html>

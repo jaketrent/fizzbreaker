@@ -1,9 +1,4 @@
-static
-.Python
-*.pyc
 .idea
 *.ipr
 *.iml
-bin
-lib
-include
+node_modules

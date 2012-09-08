@@ -1,1 +1,0 @@
-$(function(){var e=new Bubble;e.Initialize("bubble");var t=$(window),n=t.height(),r=t.width();$("#bubble-column").attr("height",n).attr("width",r/10);var i=new Bubble({height:n,width:100,is_circle:!1,gradient_fill_pts:{0:"rgba(153, 200, 30, 1)",1:"rgba(153, 200, 30, .8)"},air_percent:0,water_density:2.5});i.Initialize("bubble-column")});

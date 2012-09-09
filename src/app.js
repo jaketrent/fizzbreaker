@@ -1,6 +1,7 @@
 
 var express = require('express')
-  , routes = require('./routes')
+  , root = require('./routes/root')
+  , services = require('./routes/services')
   , http = require('http')
   , path = require('path');
 
@@ -23,15 +24,15 @@ app.configure(function(){
       .render('404.jade', { status: 404 })
       .status(500)
       .render('404.jade', { status: 500 });
-  })
+  });
 });
 
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
-app.get('/services', routes.services);
+app.get('/', root.index);
+app.get('/services', services.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

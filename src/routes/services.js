@@ -1,3 +1,3 @@
-exports.services = function(req, res){
+exports.index = function(req, res){
   res.render('services');
 };

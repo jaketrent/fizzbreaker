@@ -5,7 +5,9 @@ block content
     .porthole
       canvas(id='bubble', height='300', width='300')
         p.noCanvas
-          |You need a a(href="http://www.google.com/chrome") modern browser</a> to view this.
+          |You need a
+          a(href="http://www.google.com/chrome")='modern browser'
+          |to view this.</p>
     img(src='/img/fizzWords2.png')
   h2.fade-in.delay-3.tagline
     |Stop Waiting.  Start Creating.

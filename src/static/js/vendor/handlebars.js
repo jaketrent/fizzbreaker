@@ -1,3 +1,7 @@
+/**CUSTOM: We wrap handlebars here in a require.js define() method so that
+ * it can be used in tmpl.js.  If handlebars is upgraded, this must be added.**/
+define([], function(){
+
 // lib/handlebars/base.js
 var Handlebars = {};
 
@@ -1548,3 +1552,7 @@ Handlebars.VM = {
 
 Handlebars.template = Handlebars.VM.template;
 ;
+
+
+  return Handlebars; // CUSTOM
+});

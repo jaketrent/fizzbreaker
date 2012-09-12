@@ -11,7 +11,7 @@ require({
     }
   }
 }, ['require', 'vendor/backbone'], function (require) {
-  require(['Bubble'], function(Bubble) {
+  require(['Bubble', 'cookies'], function(Bubble, cookies) {
     $(function () {
 
       function getColor(elm) {
@@ -36,9 +36,15 @@ require({
         }
       }
 
+      if (cookies.get('fizzbreaker_back')) {
+        $('body').addClass('delay-short');
+      }
+      $('.back').click(function () {
+        cookies.set('fizzbreaker_back', true, 0);
+      });
+
       var bubble = new Bubble();
       bubble.Initialize('bubble');
-
 
       var $window = $(window);
       var $bubbleColumnCanvas = $('#bubble-column');
@@ -77,3 +83,4 @@ require({
     });
   });
 });
+

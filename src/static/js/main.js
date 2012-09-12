@@ -39,16 +39,32 @@ require({
       var bubble = new Bubble();
       bubble.Initialize('bubble');
 
+
       var $window = $(window);
-      var height = $window.height();
-      var width = $window.width();
-      $('#bubble-column')
-        .attr('height', height)
-        .attr('width', width / 10);
+      var $bubbleColumnCanvas = $('#bubble-column');
+      var $bubbleColumnDiv = $('.bubble-col');
+
+      function resizeBubbleColumn() {
+        var height = $window.height();
+        var width = $window.width();
+        var colWidth = width / 10;
+        var dimensions = {
+          'height': height,
+          'width': colWidth
+        };
+        console.log('height: ' + height + ', width: ' + colWidth);
+        $bubbleColumnDiv.css(dimensions);
+        return dimensions
+      }
+      $window.resize(resizeBubbleColumn);
+      var dims = resizeBubbleColumn();
+      $bubbleColumnCanvas
+        .attr('height', dims.height)
+        .attr('width', dims.width);
 
       var bubbleCol = new Bubble({
-        height: height,
-        width: 100,
+        height: dims.height,
+        width: dims.width,
         is_circle: false,
         gradient_fill_pts: getColor($('.content')),
         air_percent:0,

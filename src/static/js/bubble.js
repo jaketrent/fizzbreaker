@@ -14,7 +14,10 @@ define(function () {
       gradient_fill_pts: {
         0: '#2e2c6d',
         1: 'rgba(46,44,109,0)'
-      }
+      },
+      make_explode: true,
+      min_bubble_size: 15,
+      max_bubble_size: 30
     };
     var opts = _.extend({}, defaults, settings);
 
@@ -83,7 +86,7 @@ define(function () {
       context.clearRect(0, 0, opts.width, opts.height);
       context.fillStyle = gradientFill;
       if (opts.is_circle) {
-        context.arc(opts.width / 2, opts.width / 2, 150, 0, Math.PI * 2, true);
+        context.arc(opts.width / 2, opts.height / 2, opts.width / 2, 0, Math.PI * 2, true);
         context.fill();
       } else {
         context.fillRect(0,0,opts.width, opts.height);
@@ -91,7 +94,7 @@ define(function () {
 
       var len = bubbles.length;
 
-      context.fillStyle = "#rgba(0,200,255,0)";
+      //context.fillStyle = "#rgba(0,200,255,0)";
       context.beginPath();
 
       for (i = 0; i < len; i++) {
@@ -120,28 +123,30 @@ define(function () {
           for( ; i < bubbles.length; i++ ) {
             if( bubbles[i].dissolved == false ) {
               bubbles[i].dissolveSize = opts.small_bubble_dissolve;
-              DissolveBubble( i );
+              if (opts.make_explode) {
+                DissolveBubble(i);
+              }
               break;
             }
           }
         }
         else {
-          DissolveBubble( i );
+          if (opts.make_explode) {
+            DissolveBubble(i);
+          }
         }
 
       }
 
-      var minSize = 15;
-      var maxSize = 30;
-      var size = minSize + Math.random() * ( maxSize - minSize );
+      var size = opts.min_bubble_size + Math.random() * (opts.max_bubble_size - opts.min_bubble_size);
       var catapult = 20;
 
       var b = {
-        x: maxSize + ( Math.random() * ( opts.width - maxSize ) ),
-        y: opts.height - maxSize,
+        x: opts.max_bubble_size + ( Math.random() * ( opts.width - opts.max_bubble_size ) ),
+        y: opts.height - opts.max_bubble_size,
         velocity: {x: (Math.random()*catapult)-catapult/2,y: 0},
         size: size,
-        mass: (size / maxSize)+1,
+        mass: (size / opts.max_bubble_size)+1,
         dissolved: false,
         dissolveSize: opts.big_bubbles_dissolve,
         children: []

@@ -52,7 +52,10 @@ require({
         is_circle: false,
         gradient_fill_pts: getColor($('.content')),
         air_percent:0,
-        water_density: 2.5
+        water_density: 2.5,
+        make_explode: false,
+        min_bubble_size: 10,
+        max_bubble_size: 25
       });
       bubbleCol.Initialize('bubble-column');
     });

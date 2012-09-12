@@ -37,7 +37,7 @@ require({
       }
 
       if (cookies.get('fizzbreaker_back')) {
-        $('body').addClass('delay-short');
+        $('.home .delay').addClass('delay-short');
       }
       $('.back').click(function () {
         cookies.set('fizzbreaker_back', true, 0);

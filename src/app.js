@@ -25,7 +25,7 @@ app.configure(function(){
   });
 });
 
-app.configure('development', function(){
+app.configure(function(){
   app.use(express.errorHandler());
 });
 

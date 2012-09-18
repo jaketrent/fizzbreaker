@@ -21,11 +21,7 @@ app.configure(function(){
   app.use(require('stylus').middleware(__dirname + '/static'));
   app.use(express.static(path.join(__dirname, 'static')));
   app.use(function (err, req, res, next) {
-    res
-      .status(404)
-      .render('404.jade', { status: 404 })
-      .status(500)
-      .render('404.jade', { status: 500 });
+    res.render('500.jade', { status: 500 });
   });
 });
 

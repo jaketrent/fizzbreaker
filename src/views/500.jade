@@ -1,7 +1,10 @@
-!!! 5
-html
-  head
-    title='500 Error'
-  body
-    h1='The Server Encountered and Error'
-    div=error
+extends content
+
+block content
+  .content.color-orange.fade-in.delay.delay-2
+    article
+      header
+        h1 Error
+
+    section
+      p Sorry, this page doesn't work.  The bubbly went flat.

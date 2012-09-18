@@ -30,9 +30,6 @@ app.configure(function(){
 });
 
 app.get('/', root.index);
-app.get('/services', services.index);
-app.get('/creations', creations.index);
-app.get('/contact', contact.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

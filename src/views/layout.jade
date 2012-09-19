@@ -14,7 +14,7 @@ html.no-js(lang='en')
     meta(name='google-site-verification, content='K_Dl_YLZgW7HegnVNitELeZ8vXWsjkvs7JQdaptVnLA')
     meta(name='google-site-verification, content='odib3sr4MtQNAeJMyIi9z0tpY2Q41gRN9F15jWyYZPE')
     meta(name='apple-mobile-web-app-capable', content='yes')
-    meta(name="keywards", content='custom web design, fizzbreaker, fizz breaker, jake trent, custom web development')
+    meta(name="keywords", content='custom web design, fizzbreaker, fizz breaker, jake trent, custom web development')
     meta(name="description", content='Stop waiting.  Start creating.  Software custom to your life and your business.')
     meta(name="author", content='Jake Trent')
     meta(name="copyright", content='Copyright 2012 FizzBreaker. All rights reserved.')
@@ -44,10 +44,14 @@ html.no-js(lang='en')
           window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\\/script>')
         //-script(defer, src='js/plugins.js')
         script
-          var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview'],['_trackPageLoadTime']];
-          (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-          g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-          s.parentNode.insertBefore(g,s)}(document,'script'));
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-16224416-3']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
         //if lt IE 7
           script(defer, src='//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js')
           script(defer)
